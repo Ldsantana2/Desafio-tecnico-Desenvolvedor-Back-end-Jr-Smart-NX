@@ -31,7 +31,7 @@ OBS: Os emails foram omitidos no pdf incluso neste repositório!
   `git clone <url-do-seu-repositorio>
 cd <nome-da-pasta>`
 
-- Configure as variáveis de ambiente em u marquivo .env, o repositório contém um .env.example que pode ser usado!
+- Configure as variáveis de ambiente em um arquivo .env, o repositório contém um .env.example que pode ser usado!
 
 - Inicie o ambiente com Docker
   `docker-compose up --build`
