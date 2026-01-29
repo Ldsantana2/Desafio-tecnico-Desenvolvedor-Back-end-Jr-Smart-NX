@@ -1,6 +1,6 @@
 # Desafio Técnico - Back-end Jr (SmartNX)
 
-Este repositório contém a solução para o desafio técnico de Desenvolvedor Back-end Jr. A API foi desenvolvida em JavaScript (Node.js) e implementa um sistema de gerenciamento de posts e comentários com persistência de dados e autenticação.
+Este repositório contém a solução para o desafio técnico de Desenvolvedor Back-end Jr. A API foi desenvolvida em JavaScript (Node.js) e implementa um sistema de gerenciamento de posts e comentários com persistência de dados e autenticação. Como o desafio não lida com dados reais ou sensíveis o .env foi incluído no repositório.
 
 ## Documentação do Desafio
 
@@ -33,8 +33,6 @@ Curl de rotas exportadas via postman para testes:
 - Clone o repositório:
   `git clone <url-do-seu-repositorio>
 cd <nome-da-pasta>`
-
-- Configure as variáveis de ambiente em um arquivo .env, o repositório contém um .env.example que pode ser usado!
 
 - Inicie o ambiente com Docker
   `docker-compose up --build`
