@@ -1,0 +1,30 @@
+# Dependências
+node_modules/
+jspm_packages/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Variáveis de ambiente
+.env
+.env.test
+.env.local
+
+# Docker
+.docker
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Banco de dados local
+pgdata/
+mongodb_data/
