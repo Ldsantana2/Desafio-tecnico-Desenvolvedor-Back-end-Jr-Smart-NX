@@ -24,9 +24,14 @@ OBS: Os emails foram omitidos no pdf incluso neste repositório!
 ### Pré-requisitos
 
 - Docker e Docker Compose instalados na máquina.
-- .env configurado (use o .env.example)
 
 ### Passo a Passo
+
+- Clone o repositório:
+  `git clone <url-do-seu-repositorio>
+cd <nome-da-pasta>`
+
+- Configure as variáveis de ambiente em u marquivo .env, o repositório contém um .env.example que pode ser usado!
 
 - Inicie o ambiente com Docker
   `docker-compose up --build`
