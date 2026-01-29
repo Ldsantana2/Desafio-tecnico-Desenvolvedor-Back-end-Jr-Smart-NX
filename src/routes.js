@@ -17,7 +17,7 @@ routes.post('/posts', PostController.store);
 routes.put('/posts/:id', PostController.update);
 routes.delete('/posts/:id', PostController.delete);
 
-routes.post('/posts/:post_id/comments', CommentController.store);
+routes.post('/posts/:postId/comments', CommentController.store);
 routes.delete('/comments/:id', CommentController.delete);
 
 module.exports = routes;

@@ -9,6 +9,9 @@ O detalhamento completo dos requisitos originais pode ser consultado no PDF forn
 
 OBS: Os emails foram omitidos no pdf incluso neste repositório!
 
+Curl de rotas exportadas via postman para testes:
+[Clique aqui para visualizar](./docs/API.postman_collection.json)
+
 ## Tecnologias Utilizadas
 
 - **Node.js** com **Express**: Framework principal para a construção da API.
@@ -53,6 +56,9 @@ cd <nome-da-pasta>`
 - Corrige automaticamente problemas de estilo, indentação e pontuação
 
 ### Endpoints e Autenticação
+
+Curl de rotas exportadas via postman para testes:
+[Clique aqui para visualizar](./docs/API.postman_collection.json)
 
 - POST /register: Registra um novo usuário (Nome, Username e Password).
 
