@@ -10,16 +10,24 @@ services:
             - DB_HOST=postgres
             - MONGO_URI=mongodb://mongodb:27017/auth_db
         depends_on:
-            - postgres
-            - mongodb
+            postgres:
+                condition: service_healthy
+            mongodb:
+                condition: service_started
 
     postgres:
         image: postgres:15
         environment:
             POSTGRES_DB: smartnx_db
+            POSTGRES_USER: postgres
             POSTGRES_PASSWORD: password
         ports:
             - '5432:5432'
+        healthcheck:
+            test: ['CMD-SHELL', 'pg_isready -U postgres -d smartnx_db']
+            interval: 5s
+            timeout: 5s
+            retries: 5
 
     mongodb:
         image: mongo:latest
