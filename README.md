@@ -1,6 +1,6 @@
 # Desafio Técnico - Back-end Jr (SmartNX)
 
-Este repositório contém a solução para o desafio técnico de Desenvolvedor Back-end Jr. A API foi desenvolvida em JavaScript (Node.js) e implementa um sistema de gerenciamento de posts e comentários com persistência de dados e autenticação. Como o desafio não lida com dados reais ou sensíveis o .env foi incluído no repositório.
+Este repositório contém a solução para o desafio técnico de Desenvolvedor Back-end Jr da SmartNX. A API foi desenvolvida em JavaScript (Node.js) e implementa um sistema de gerenciamento de posts e comentários com persistência de dados e autenticação.
 
 ## Documentação do Desafio
 
@@ -9,7 +9,7 @@ O detalhamento completo dos requisitos originais pode ser consultado no PDF forn
 
 OBS: Os emails foram omitidos no pdf incluso neste repositório!
 
-Curl de rotas exportadas via postman para testes:
+curl de rotas exportadas via postman para testes:
 [Clique aqui para visualizar](./docs/API.postman_collection.json)
 
 ## Tecnologias Utilizadas
@@ -34,8 +34,12 @@ Curl de rotas exportadas via postman para testes:
   `git clone <url-do-seu-repositorio>
 cd <nome-da-pasta>`
 
+- Crie o arquivo .env com as variáveis inclusas no .env.example
+
 - Inicie o ambiente com Docker
   `docker-compose up --build`
+
+- Aguarde a mensagem de "Servidor rodando na porta xxx"
 
 - A API estará disponível para receber requisições em http://localhost:3000
 
@@ -55,21 +59,21 @@ cd <nome-da-pasta>`
 
 ### Endpoints e Autenticação
 
-Curl de rotas exportadas via postman para testes:
+curl de rotas exportadas via postman para testes:
 [Clique aqui para visualizar](./docs/API.postman_collection.json)
 
-- POST /register: Registra um novo usuário (Nome, Username e Password).
+- Cadastro de Usuário: Envie um POST para /register com um corpo JSON contendo name, username e password.
 
-- POST /login: Valida as credenciais e retorna o token JWT (Válido por 1h).
+- Login: Envie um POST para /login com username e password. O retorno será um Token JWT que deve ser usado nas demais rotas.
 
-- GET /posts: Lista todos os posts cadastrados junto com seus comentários.
+- Listagem de Posts: Envie um GET para /posts. Esta rota retorna todos os posts com seus respectivos comentários aninhados. Requer Header: Authorization: Bearer <token>
 
-- POST /posts: Cria um novo post (Privado).
+- Criação de Post: Envie um POST para /posts com um JSON contendo title e content. Requer Header: Authorization: Bearer <token>.
 
-- PUT /posts/:id: Atualiza o título ou conteúdo de um post (Privado).
+- Edição de Post: Envie um PUT para /posts/:id com os campos que deseja atualizar no corpo da requisição. Requer Header: Authorization: Bearer <token>.
 
-- DELETE /posts/:id: Remove um post. Devido ao CASCADE, todos os comentários vinculados também são deletados (Privado).
+- Exclusão de Post: Envie um DELETE para /posts/:id. Isso removerá o post e todos os comentários vinculados a ele. Requer Header: Authorization: Bearer <token>.
 
-- POST /posts/:post_id/comments: Adiciona um novo comentário a um post específico (Privado).
+- Adicionar Comentário: Envie um POST para /posts/:post_id/comments com um JSON contendo o campo content. Requer Header: Authorization: Bearer <token>.
 
-- DELETE /comments/:id: Remove um comentário individual (Privado).
+- Remover Comentário: Envie um DELETE para /comments/:id (este é o id do comentário e não do post!). Requer Header: Authorization: Bearer <token>.
